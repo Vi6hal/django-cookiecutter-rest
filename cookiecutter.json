@@ -1,6 +1,7 @@
 {
   "project_slug": "supercoolprojectname",
-  "project_name": "core",
+  "django_project_name": "core",
+  "app_directory": "app",
   "github_username": "n0tNoah",
   "github_repository_name": "djangoLTS-slim",
   "_copy_without_render": ["*.html"]

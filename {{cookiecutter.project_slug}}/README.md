@@ -4,7 +4,7 @@
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
 
-# {{ cookiecutter.project_name }}
+# {{ cookiecutter.django_project_name }}
 
 ## Installation
 

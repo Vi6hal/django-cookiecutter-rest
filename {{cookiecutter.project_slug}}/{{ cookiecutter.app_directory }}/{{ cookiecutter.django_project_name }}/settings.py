@@ -90,8 +90,8 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-WSGI_APPLICATION = '{{ cookiecutter.project_name }}.wsgi.application'
-ROOT_URLCONF = '{{ cookiecutter.project_name }}.urls'
+WSGI_APPLICATION = '{{ cookiecutter.django_project_name }}.wsgi.application'
+ROOT_URLCONF = '{{ cookiecutter.django_project_name }}.urls'
 AUTH_USER_MODEL = 'accounts.User'
 
 
