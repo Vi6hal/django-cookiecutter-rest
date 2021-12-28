@@ -24,7 +24,6 @@ Jinja2==3.0.3
 MarkupSafe==2.0.1
 oauthlib==3.1.1
 packaging==21.3
-pkg_resources==0.0.0
 psycopg2-binary==2.9.2
 pycparser==2.21
 PyJWT==2.3.0
