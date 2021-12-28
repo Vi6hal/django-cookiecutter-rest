@@ -1,0 +1,25 @@
+{
+	"env": {
+		"ENV": "production",
+		"DJANGO_SUPERUSER_PASSWORD": "admin",
+		"DJANGO_SUPERUSER_EMAIL":"admin@example.com",
+		"SECRET_KEY": {
+			"generator": "secret"
+		},
+		"DEBUG": "false"
+	},
+	"addons": [
+		{
+			"plan": "heroku-postgresql:hobby-dev"
+		},
+		{
+			"plan": "heroku-redis:hobby-dev"
+		}
+	],
+	"buildpacks": [
+		{
+			"url": "https://github.com/heroku/heroku-buildpack-python.git"
+		}
+	],
+	"success_url": "/api"
+}

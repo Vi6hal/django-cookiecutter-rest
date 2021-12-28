@@ -1,0 +1,12 @@
+Django==3.2.10
+djoser
+drf-yasg
+django-cors-headers
+djangorestframework
+djangorestframework-simplejwt
+python-decouple
+whitenoise
+gunicorn
+dj-database-url
+psycopg2-binary
+django-filter

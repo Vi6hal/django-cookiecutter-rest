@@ -1,0 +1,7 @@
+{
+  "project_name": "supercoolproject",
+  "project_slug": "_core",
+  "github_username": "n0tNoah",
+  "github_repository_name": "djangoLTS-slim",
+  "_copy_without_render": ["*.html"]
+}
