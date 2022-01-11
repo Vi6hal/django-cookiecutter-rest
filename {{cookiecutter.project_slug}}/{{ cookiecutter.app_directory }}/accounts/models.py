@@ -12,50 +12,49 @@ from devutils.models import AbstractModel
 class User(PermissionsMixin, AbstractBaseUser, AbstractModel):
 
     id = models.UUIDField(
-        primary_key=True, default=uuid.uuid4, editable=False, unique=True)
+        primary_key=True, default=uuid.uuid4, editable=False, unique=True
+    )
     username_validator = UnicodeUsernameValidator()
     username = models.CharField(
-        _('Username'),
+        _("Username"),
         max_length=255,
-        validators=[username_validator], blank=True, null=True)
-
-    first_name = models.CharField(
-        _('First Name'),
-        max_length=255,
+        validators=[username_validator],
         blank=True,
-        null=True)
-
-    last_name = models.CharField(
-        _('Last Name'),
-        max_length=255,
-        blank=True,
-        null=True)
-
-    is_active = models.BooleanField(
-        _('Active'),
-        default=True,
-        help_text=_(
-            'Designates whether this user should be treated as active. '
-            'Unselect this instead of deleting accounts.'
-        ),)
-
-    # allow non-unique emails
-    email = models.EmailField('Email address', blank=True, unique=True)
-    is_staff = models.BooleanField(
-        'staff status',
-        default=False,
-        help_text='Designates whether the user can log into this admin site.'
+        null=True,
     )
 
-    USERNAME_FIELD = 'email'
-    EMAIL_FIELD = 'email'
+    first_name = models.CharField(
+        _("First Name"), max_length=255, blank=True, null=True
+    )
+
+    last_name = models.CharField(_("Last Name"), max_length=255, blank=True, null=True)
+
+    is_active = models.BooleanField(
+        _("Active"),
+        default=True,
+        help_text=_(
+            "Designates whether this user should be treated as active. "
+            "Unselect this instead of deleting accounts."
+        ),
+    )
+
+    # allow non-unique emails
+    email = models.EmailField("Email address", blank=True, unique=True)
+    is_staff = models.BooleanField(
+        "staff status",
+        default=False,
+        help_text="Designates whether the user can log into this admin site.",
+    )
+
+    USERNAME_FIELD = "email"
+    EMAIL_FIELD = "email"
 
     @property
     def is_django_user(self):
         return self.has_usable_password()
 
     def __repr__(self):
-        return f'<{self.__class__.__name__} {self.id}>'
+        return f"<{self.__class__.__name__} {self.id}>"
 
     objects = UserManager()
 
@@ -67,7 +66,7 @@ class User(PermissionsMixin, AbstractBaseUser, AbstractModel):
         """
         Return the first_name plus the last_name, with a space in between.
         """
-        full_name = '%s %s' % (self.first_name, self.last_name)
+        full_name = "%s %s" % (self.first_name, self.last_name)
         return full_name.strip()
 
     def get_short_name(self):

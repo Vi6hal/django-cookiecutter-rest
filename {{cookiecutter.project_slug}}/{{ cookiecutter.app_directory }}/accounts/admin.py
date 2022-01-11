@@ -6,42 +6,61 @@ from accounts.models import User
 
 
 class CustomUserCreationForm(UserCreationForm):
-
     class Meta(UserCreationForm.Meta):
         model = User
 
 
 class CustomUserChangeForm(UserChangeForm):
-
     class Meta(UserCreationForm.Meta):
         model = User
-        fields = '__all__'
-        field_classes = {'username': UsernameField}
+        fields = "__all__"
+        field_classes = {"username": UsernameField}
 
 
 @admin.register(User)
 class CustomUserAdmin(UserAdmin):
     fieldsets = (
-        (None, {'fields': ('email', 'password', )}),
         (
-            _('Permissions'),
+            None,
             {
-                'fields': (
-                    'is_active', 'is_staff',
-                    'is_superuser', 'groups',
-                    'user_permissions')
-            }
+                "fields": (
+                    "email",
+                    "password",
+                )
+            },
+        ),
+        (
+            _("Permissions"),
+            {
+                "fields": (
+                    "is_active",
+                    "is_staff",
+                    "is_superuser",
+                    "groups",
+                    "user_permissions",
+                )
+            },
         ),
         # (_('Important dates'), {'fields': ('created_at', 'updated_at', 'activated', 'email_confirmed')}),
-
     )
     # readonly_fields = ('created_at', 'updated_at', )
     add_fieldsets = (
-        (None, {
-            'classes': ('wide', ),
-            'fields': ('email', 'password1', 'password2', ),
-        }),
+        (
+            None,
+            {
+                "classes": ("wide",),
+                "fields": (
+                    "email",
+                    "password1",
+                    "password2",
+                ),
+            },
+        ),
     )
     form = CustomUserChangeForm
     add_form = CustomUserCreationForm
-    list_display = ('email', 'is_staff', 'is_active', )
+    list_display = (
+        "email",
+        "is_staff",
+        "is_active",
+    )

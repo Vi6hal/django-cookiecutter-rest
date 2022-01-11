@@ -1,4 +1,4 @@
-[flake8]
-exclude = build,.git,.tox,./tests/.env,.env/
-ignore = W504,W601
-max-line-length = 119
+[tool.black]
+line-length = 88
+target-version = ['py36', 'py37', 'py38']
+include = '\.pyi?$'

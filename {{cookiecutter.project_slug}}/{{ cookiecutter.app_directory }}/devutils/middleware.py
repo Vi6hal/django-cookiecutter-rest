@@ -2,7 +2,7 @@ from django.conf import settings
 from django.contrib.auth.models import AnonymousUser
 from threading import local
 
-USER_ATTR_NAME = getattr(settings, 'LOCAL_USER_ATTR_NAME', '_current_user')
+USER_ATTR_NAME = getattr(settings, "LOCAL_USER_ATTR_NAME", "_current_user")
 
 _thread_locals = local()
 
@@ -12,17 +12,16 @@ def _do_set_current_user(user_fun):
 
 
 def _set_current_user(user=None):
-    '''
+    """
     Sets current user in local thread.
 
     Can be used as a hook e.g. for shell jobs (when request object is not
     available).
-    '''
+    """
     _do_set_current_user(lambda self: user)
 
 
 class ThreadLocalUserMiddleware(object):
-
     def __init__(self, get_response):
         self.get_response = get_response
 
@@ -30,7 +29,7 @@ class ThreadLocalUserMiddleware(object):
         # request.user closure; asserts laziness;
         # memorization is implemented in
         # request.user (non-data descriptor)
-        _do_set_current_user(lambda self: getattr(request, 'user', None))
+        _do_set_current_user(lambda self: getattr(request, "user", None))
         response = self.get_response(request)
         return response
 

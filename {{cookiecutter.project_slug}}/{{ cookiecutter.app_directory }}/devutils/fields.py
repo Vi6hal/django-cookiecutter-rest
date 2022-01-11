@@ -8,12 +8,14 @@ from .middleware import get_current_authenticated_user
 
 class CurrentUserField(models.ForeignKey):
 
-    warning = ("You passed an argument to CurrentUserField that will be "
-               "ignored. Avoid args and following kwargs: default, null, to.")
-    description = _(
-        'as default value sets the current logged in user if available')
-    defaults = dict(null=True, default=get_current_authenticated_user,
-                    to=settings.AUTH_USER_MODEL)
+    warning = (
+        "You passed an argument to CurrentUserField that will be "
+        "ignored. Avoid args and following kwargs: default, null, to."
+    )
+    description = _("as default value sets the current logged in user if available")
+    defaults = dict(
+        null=True, default=get_current_authenticated_user, to=settings.AUTH_USER_MODEL
+    )
 
     def __init__(self, *args, **kwargs):
         self.on_update = kwargs.pop("on_update", False)
@@ -32,7 +34,7 @@ class CurrentUserField(models.ForeignKey):
     def deconstruct(self):
         name, path, args, kwargs = super(CurrentUserField, self).deconstruct()
         if self.on_update:
-            kwargs['on_update'] = self.on_update
+            kwargs["on_update"] = self.on_update
             del kwargs["editable"]
             del kwargs["blank"]
 

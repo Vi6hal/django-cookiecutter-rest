@@ -6,7 +6,7 @@ from drf_yasg import openapi
 schema_view = get_schema_view(
     openapi.Info(
         title="{{ cookiecutter.project_slug }}",
-        default_version='v0.0.1',
+        default_version="v0.0.1",
         description="API Spec Documentation",
         terms_of_service="/usr/dev/null",
         contact=openapi.Contact(email=""),
@@ -18,8 +18,8 @@ schema_view = get_schema_view(
 
 
 urlpatterns = [
-    path('', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
-    path('', include("djoser.urls.base")),
-    path('manage/', admin.site.urls),
-    path('', include("djoser.urls.jwt")),
+    path("", schema_view.with_ui("swagger", cache_timeout=0), name="schema-swagger-ui"),
+    path("", include("djoser.urls.base")),
+    path("manage/", admin.site.urls),
+    path("", include("djoser.urls.jwt")),
 ]
