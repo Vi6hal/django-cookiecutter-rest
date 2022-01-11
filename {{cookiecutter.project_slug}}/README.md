@@ -13,7 +13,8 @@ pip install -r requirements.txt
 python3 manage.py migrate
 ```
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.github_repository_name }})
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)]
+(https://heroku.com/deploy?template=https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.github_repository_name }})
 
 ## Usage
 
