@@ -2,3 +2,8 @@
 line-length = 88
 target-version = ['py36', 'py37', 'py38']
 include = '\.pyi?$'
+
+[tool.isort]
+multi_line_output = 3
+line_length = 88
+include_trailing_comma = true
