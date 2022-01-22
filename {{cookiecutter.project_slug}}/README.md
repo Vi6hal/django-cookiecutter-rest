@@ -2,7 +2,17 @@
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
+
+## Code Quality
+
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)
+[GitHub Actions](https://img.shields.io/badge/githubactions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white)
+
+## Dependencies
+
+![Django](https://img.shields.io/badge/django-%23092E20.svg?style=for-the-badge&logo=django&logoColor=white)
+![DjangoREST](https://img.shields.io/badge/DJANGO-REST-ff1709?style=for-the-badge&logo=django&logoColor=white&color=ff1709&labelColor=gray)
+![JWT](https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens)
 
 # {{ cookiecutter.django_project_name }}
 
@@ -13,9 +23,6 @@ pip install -r requirements.txt
 python3 manage.py migrate
 ```
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)]
-(https://heroku.com/deploy?template=https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.github_repository_name }})
-
 ## Usage
 
 ```bash
@@ -23,8 +30,6 @@ python3 manage.py runserver
 ```
 
 ## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
