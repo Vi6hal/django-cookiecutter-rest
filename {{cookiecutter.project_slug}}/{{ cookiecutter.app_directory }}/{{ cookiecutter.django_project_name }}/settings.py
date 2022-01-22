@@ -53,7 +53,6 @@ DATABASES["default"] = dj_database_url.parse(
     config(
         "DATABASE_URL",
         default=f"sqlite:///{BASE_DIR}/notsogooddatabasebackendusedbydefault.sqlite3",
-
     ),
     conn_max_age=600,
     ssl_require=True,
