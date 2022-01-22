@@ -56,5 +56,4 @@ class CurrentUserField(models.ForeignKey):
         else:
             for key in set(kwargs).intersection(set(self.defaults.keys())):
                 if not kwargs[key] == self.defaults[key]:
-                    warnings.warn(self.warning)
                     break
