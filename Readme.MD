@@ -1,6 +1,6 @@
 # Django Cookiecutter template with Django==3.2.10 
 
-`djangoLTS-slim` is a cookie-cutter template for bootstrapping **Django** projects with minimal efforts and ensuring the best practices followed in at the very beginning.
+`django-ccokiecutter-rest` is a cookie-cutter template for bootstrapping `headless` **Django** with minimal efforts and ensuring the best practices followed in at the very beginning.
 
 ## Features
 
@@ -10,16 +10,15 @@
 - [12-Factor](http://12factor.net/) based settings
 - Optimized development and production settings
 - Comes with custom user model ready to go
-- Optional basic ASGI setup for Websockets
-- Docker support using [docker-compose](https://github.com/docker/compose) for development and production
+- Docker support using [Dockerfile](https://github.com/docker) for development and production
 - [Procfile](https://devcenter.heroku.com/articles/procfile) for deploying to Heroku
-- Run tests with unittest or pytest
-- Customizable PostgreSQL version
+- Run tests with pytest
+- PostgreSQL support
 - Default integration with [pre-commit](https://github.com/pre-commit/pre-commit) for identifying simple issues before submission to code review
 
 ## Usage
 
-Let's pretend you want to create a Django project called "redditclone". Rather than using `startproject`
+Let's pretend you want to create a Django project called "petstore". Rather than using `startproject`
 and then editing the results to include your name, email, and various configuration issues that always get forgotten until the worst possible moment, get [cookiecutter](https://github.com/cookiecutter/cookiecutter) to do all the work.
 
 First, get Cookiecutter:
@@ -28,7 +27,7 @@ First, get Cookiecutter:
 
 Now run it against this repo:
 
-    $ cookiecutter https://github.com/n0tNoah/djangoLTS-slim
+    $ cookiecutter https://github.com/n0tNoah/django-cookiecutter-rest/
 
 You'll be prompted for some values. Provide them, then a Django project will be created for you.
 
