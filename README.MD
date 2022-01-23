@@ -1,4 +1,4 @@
-# djangoLTS-slim
+# Django Cookiecutter template with Django==3.2.10 
 
 `djangoLTS-slim` is a cookie-cutter template for bootstrapping **Django** projects with minimal efforts and ensuring the best practices followed in at the very beginning.
 
