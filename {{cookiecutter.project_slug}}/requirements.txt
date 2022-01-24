@@ -12,7 +12,7 @@ Django==3.2.10
 django-cors-headers==3.10.1
 django-filter==21.1
 django-templated-mail==1.1.1
-djangorestframework==3.12.4
+djangorestframework==3.13.1
 djangorestframework-simplejwt==4.8.0
 djoser==2.1.0
 drf-yasg==1.20.0
