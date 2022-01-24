@@ -1,10 +1,15 @@
-# Project Title
 
-One Paragraph of project description goes here
+# cookiecutter-django-rest
+`cookiecutter-django-rest` is a template for bootstrapping  **Django**  REST APi projects 
+it takes care of the code quality,dependencies and the best practices that  ** every python project** or rather **every project** needs to implement.
 
-## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+## Features
+This template does not force you to integrate `boto3`,`postgres`,`docker` or any other dependancy / practices, but rather focuses on the important and crucial things, and let's you deicde your pizza toppings as you develop further, while [agconti/cookiecutter-django-rest](https://github.com/agconti/cookiecutter-django-rest) changes things drastically in terms of settings,packages and project structure that it feels bloated.
+
+- Built on Django 3.2.11
+- Works with python 3.7 | 3.8 | 3.9
+- 
 
 ### Prerequisites
 
@@ -72,7 +77,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Vishal P** - *Initiator* - [PurpleBooth](https://github.com/PurpleBooth)
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
@@ -81,7 +86,6 @@ See also the list of [contributors](https://github.com/your/project/contributors
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
 ## Acknowledgments
+- 🎩 Hat tip to anyone whose code was used
+- **Inspired by** [agconti/cookiecutter-django-rest](https://github.com/agconti/cookiecutter-django-rest)
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
