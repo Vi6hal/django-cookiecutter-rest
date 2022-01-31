@@ -1,2 +1,2 @@
 release: python manage.py migrate
-web: gunicorn {{ cookiecutter.app_directory }}.{{ cookiecutter.django_project_name }}.wsgi
+web: gunicorn app.{{ cookiecutter.django_project_name }}.wsgi

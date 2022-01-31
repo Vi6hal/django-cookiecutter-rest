@@ -4,10 +4,10 @@ from python:3.8-bullseye
 ENV PYTHONUNBUFFERED 1
 ENV PYTHONDONTWRITEBYTECODE 1
 
-# COPY {{ cookiecutter.app_directory }} /opt/{{ cookiecutter.app_directory }}
+# COPY app /opt/app
 COPY . /opt/data
 COPY requirements.txt /tmp/requirements.txt
-WORKDIR /opt/data/{{ cookiecutter.app_directory }}
+WORKDIR /opt/data/app
 RUN pip install --upgrade pip && pip install -r /tmp/requirements.txt
 RUN ls
 RUN \
