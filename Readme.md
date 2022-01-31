@@ -1,3 +1,4 @@
+
 # Django Cookiecutter template with Django
 
 `django-ccokiecutter-rest` is a cookie-cutter template for bootstrapping `headless` **Django** with minimal efforts and ensuring the best practices followed in at the very beginning.
@@ -5,16 +6,15 @@
 [![Sanity Check](https://github.com/n0tNoah/django-cookiecutter-rest/actions/workflows/sanitycheck.yml/badge.svg)](https://github.com/n0tNoah/django-cookiecutter-rest/actions/workflows/sanitycheck.yml)
 
 ## Features
+This template does not force you to integrate `boto3`,`postgres`,`docker` or any other dependancy / practices, but rather focuses on the important and crucial things, and let's you deicde your pizza toppings as you develop further, while [agconti/cookiecutter-django-rest](https://github.com/agconti/cookiecutter-django-rest) changes things drastically in terms of settings,packages and project structure that it feels bloated.
 
 - For Django 3.2.10
 - Works with Python 3.9/3.8/3.7
-- Renders Django projects with 100% starting test coverage
-- [12-Factor](http://12factor.net/) based settings
+- [12-Factor](http://12factor.net/) compliance
 - Optimized development and production settings
 - Comes with custom user model ready to go
 - Docker support using [Dockerfile](https://github.com/docker) for development and production
 - [Procfile](https://devcenter.heroku.com/articles/procfile) for deploying to Heroku
-- Run tests with pytest
 - PostgreSQL support
 - Default integration with [pre-commit](https://github.com/pre-commit/pre-commit) for identifying simple issues before submission to code review
 
@@ -42,5 +42,13 @@ Please make sure to update tests as appropriate.
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
+
+## Authors
+
+* **Vishal P** - *Initiator* - [n0tNoah](https://github.com/n0tNoah)
+
+##  Acknowledgments
+- 🎩 Hat tip to anyone whose code was used
+- Inspired by [agconti/cookiecutter-django-rest](https://github.com/agconti/cookiecutter-django-rest)
 
 ###### Powered by [Cookiecutter](https://github.com/cookiecutter/cookiecutter) & [Django](https://www.djangoproject.com/)
