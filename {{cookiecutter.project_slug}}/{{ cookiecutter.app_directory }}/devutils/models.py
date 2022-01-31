@@ -12,9 +12,7 @@ class AbstractModel(models.Model):
     created_at = models.DateTimeField(
         auto_now_add=True,
     )
-    updated_by = CurrentUserField(
-        on_update=True, related_name="%(app_label)s_%(class)s_updated_by"
-    )
+    updated_by = CurrentUserField(on_update=True, related_name="%(app_label)s_%(class)s_updated_by")
     updated_at = models.DateTimeField(auto_now=True)
 
     def __repr__(self):

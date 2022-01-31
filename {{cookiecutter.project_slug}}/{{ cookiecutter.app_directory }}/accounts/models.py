@@ -1,6 +1,7 @@
 import uuid
 
 from devutils.models import AbstractModel
+
 from django.contrib.auth.base_user import AbstractBaseUser
 from django.contrib.auth.models import PermissionsMixin
 from django.contrib.auth.validators import UnicodeUsernameValidator
@@ -13,9 +14,7 @@ from .managers import UserManager
 
 class User(PermissionsMixin, AbstractBaseUser, AbstractModel):
 
-    id = models.UUIDField(
-        primary_key=True, default=uuid.uuid4, editable=False, unique=True
-    )
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False, unique=True)
     username_validator = UnicodeUsernameValidator()
     username = models.CharField(
         _("Username"),
@@ -25,18 +24,14 @@ class User(PermissionsMixin, AbstractBaseUser, AbstractModel):
         null=True,
     )
 
-    first_name = models.CharField(
-        _("First Name"), max_length=255, blank=True, null=True
-    )
+    first_name = models.CharField(_("First Name"), max_length=255, blank=True, null=True)
 
     last_name = models.CharField(_("Last Name"), max_length=255, blank=True, null=True)
 
     is_active = models.BooleanField(
         _("Active"),
         default=True,
-        help_text=_(
-            "Designates whether this user should be treated as active"
-        ),
+        help_text=_("Designates whether this user should be treated as active"),
     )
 
     # allow non-unique emails

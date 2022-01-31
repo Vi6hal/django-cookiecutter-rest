@@ -15,7 +15,9 @@ class CurrentUserField(models.ForeignKey):
     )
     description = _("as default value sets the current logged in user if available")
     defaults = dict(
-        null=True, default=get_current_authenticated_user, to=settings.AUTH_USER_MODEL
+        null=True,
+        default=get_current_authenticated_user,
+        to=settings.AUTH_USER_MODEL,
     )
 
     def __init__(self, *args, **kwargs):
