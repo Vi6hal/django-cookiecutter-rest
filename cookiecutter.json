@@ -4,6 +4,6 @@
   "_copy_without_render": [
     "*.html",
     ".github/workflows/sanity-check.yml",
-    "github/workflows/release_tag.yml"
+    ".github/workflows/release_tag.yml"
   ]
 }
