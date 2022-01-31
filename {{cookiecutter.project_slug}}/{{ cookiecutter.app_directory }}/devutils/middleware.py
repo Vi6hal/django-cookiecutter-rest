@@ -1,6 +1,7 @@
+from threading import local
+
 from django.conf import settings
 from django.contrib.auth.models import AnonymousUser
-from threading import local
 
 USER_ATTR_NAME = getattr(settings, "LOCAL_USER_ATTR_NAME", "_current_user")
 
@@ -21,7 +22,7 @@ def _set_current_user(user=None):
     _do_set_current_user(lambda self: user)
 
 
-class ThreadLocalUserMiddleware(object):
+class ThreadLocalUserMiddleware:
     def __init__(self, get_response):
         self.get_response = get_response
 

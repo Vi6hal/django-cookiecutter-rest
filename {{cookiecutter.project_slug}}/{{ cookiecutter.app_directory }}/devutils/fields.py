@@ -3,6 +3,7 @@ import warnings
 from django.conf import settings
 from django.db import models
 from django.utils.translation import gettext_lazy as _
+
 from .middleware import get_current_authenticated_user
 
 
@@ -29,10 +30,10 @@ class CurrentUserField(models.ForeignKey):
             kwargs["blank"] = True
 
         kwargs.update(self.defaults)
-        super(CurrentUserField, self).__init__(**kwargs)
+        super().__init__(**kwargs)
 
     def deconstruct(self):
-        name, path, args, kwargs = super(CurrentUserField, self).deconstruct()
+        name, path, args, kwargs = super().deconstruct()
         if self.on_update:
             kwargs["on_update"] = self.on_update
             del kwargs["editable"]
@@ -48,7 +49,7 @@ class CurrentUserField(models.ForeignKey):
             setattr(model_instance, self.attname, value)
             return value
         else:
-            return super(CurrentUserField, self).pre_save(model_instance, add)
+            return super().pre_save(model_instance, add)
 
     def _warn_for_shadowing_args(self, *args, **kwargs):
         if args:

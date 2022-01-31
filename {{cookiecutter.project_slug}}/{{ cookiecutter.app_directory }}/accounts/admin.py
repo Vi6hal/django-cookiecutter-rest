@@ -1,8 +1,8 @@
+from accounts.models import User
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
-from django.contrib.auth.forms import UserCreationForm, UserChangeForm, UsernameField
+from django.contrib.auth.forms import UserChangeForm, UserCreationForm, UsernameField
 from django.utils.translation import gettext_lazy as _
-from accounts.models import User
 
 
 class CustomUserCreationForm(UserCreationForm):
@@ -22,15 +22,7 @@ class CustomUserAdmin(UserAdmin):
     fieldsets = (
         (
             None,
-            {
-                "fields": (
-                    "email",
-                    "password",
-                    "first_name",
-                    "last_name"
-
-                )
-            },
+            {"fields": ("email", "password", "first_name", "last_name")},
         ),
         (
             _("Permissions"),

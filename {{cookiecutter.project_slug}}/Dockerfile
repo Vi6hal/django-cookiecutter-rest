@@ -14,6 +14,6 @@ RUN \
     python manage.py makemigrations && \
     python manage.py migrate --no-input && \
     python manage.py collectstatic --no-input
-RUN chmod +x ../startup.sh 
+RUN chmod +x ../startup.sh
 EXPOSE 8000
 CMD ["../startup.sh"]
