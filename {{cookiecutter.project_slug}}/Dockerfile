@@ -4,16 +4,23 @@ from python:3.8-bullseye
 ENV PYTHONUNBUFFERED 1
 ENV PYTHONDONTWRITEBYTECODE 1
 
-# COPY app /opt/app
+
+ARG DEF_DB_URL
+ENV DATABASE_URL $DEF_DB_URL  
+ENV WORKERS 4
+ENV PORT 8000
+
+
 COPY . /opt/data
+RUN ls
 COPY requirements.txt /tmp/requirements.txt
 WORKDIR /opt/data/app
-RUN pip install --upgrade pip && pip install -r /tmp/requirements.txt
-RUN ls
+RUN pip install --upgrade pip 
+RUN pip install -r /tmp/requirements.txt
 RUN \
     python manage.py makemigrations && \
     python manage.py migrate --no-input && \
     python manage.py collectstatic --no-input
-RUN chmod +x ../startup.sh
-EXPOSE 8000
-CMD ["../startup.sh"]
+RUN chmod +x ../entrypoint.sh
+EXPOSE $PORT
+CMD ["../entrypoint.sh"]

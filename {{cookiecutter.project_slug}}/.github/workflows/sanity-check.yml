@@ -14,6 +14,8 @@ on:
 jobs:
   health-check-job: # health check job for testing and code formatting check
     runs-on: ubuntu-latest # os for running the job
+    env:
+      DATABASE_URL: postgres://postgres:postgres@localhost:5432/github-actions
     services:
       postgres: # we need a postgres docker image to be booted a side car service to run the tests that needs a db
         image: postgres
@@ -47,7 +49,6 @@ jobs:
           pip install safety
       - name: Running Dependency Check on installed packages
         run: |
-          ls -la
           pip check
       - name: Running Safety Check on installed packages
         run: |
