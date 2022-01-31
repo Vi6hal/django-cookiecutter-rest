@@ -1,5 +1,9 @@
 {
   "project_slug": "supercoolprojectname",
   "django_project_name": "cool_django_app",
-  "_copy_without_render": ["*.html", ".github/workflows/sanity-check.yml"]
+  "_copy_without_render": [
+    "*.html",
+    ".github/workflows/sanity-check.yml",
+    "github/workflows/release_tag.yml"
+  ]
 }
