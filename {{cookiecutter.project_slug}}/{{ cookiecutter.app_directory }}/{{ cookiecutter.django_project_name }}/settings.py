@@ -11,6 +11,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config("SECRET_KEY", default=get_random_secret_key())
 DEBUG = config("DEBUG", default=True, cast=bool)
 ALLOWED_HOSTS = config("ALLOWED_HOSTS", default=("localhost", "127.0.0.1"))
+
 # TODO CHANGE THIS
 DOMAIN = "DOMAIN_HERE"
 # TODO CHANGE THIS
@@ -101,18 +102,6 @@ AUTH_USER_MODEL = "accounts.User"
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 STATIC_ROOT = BASE_DIR / "staticfiles"
 STATIC_URL = "/static/"
-
-# Extra places for collectstatic to find static files.
-# STATICFILES_DIRS = (
-#     os.path.join(BASE_DIR, 'static'),
-# )
-
-CORS_ORIGIN_ALLOW_ALL = True
-
-# CORS_ORIGIN_WHITELIST = (
-#   'http://localhost:8000',
-#   'http://localhost:3000',
-# )
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 

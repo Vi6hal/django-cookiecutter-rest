@@ -36,9 +36,7 @@ class CustomUserAdmin(UserAdmin):
                 )
             },
         ),
-        # (_('Important dates'), {'fields': ('created_at', 'updated_at', 'activated', 'email_confirmed')}),
     )
-    # readonly_fields = ('created_at', 'updated_at', )
     add_fieldsets = (
         (
             None,

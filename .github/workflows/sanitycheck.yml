@@ -57,7 +57,7 @@ jobs:
         run: |
           pip install -r requirements.txt
           pip install safety
-      - name: Running Dependancy Check on installed packages
+      - name: Running Dependency Check on installed packages
         working-directory: /tmp/project/supercoolprojectname
         run: |
           pip check
@@ -68,7 +68,6 @@ jobs:
       - name: Running project test cases
         working-directory: /tmp/project/supercoolprojectname/app
         run: |
-          ls -la
           python manage.py makemigrations
           python manage.py migrate
           python manage.py collectstatic --no-input
