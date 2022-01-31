@@ -4,5 +4,5 @@
   "app_directory": "app",
   "github_username": "user",
   "github_repository_name": "cool_django_app",
-  "_copy_without_render": ["*.html", ".github/sanity-check.yml"]
+  "_copy_without_render": ["*.html", ".github/workflows/sanity-check.yml"]
 }
