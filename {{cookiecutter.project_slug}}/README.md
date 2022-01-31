@@ -10,7 +10,7 @@
 ![JWT](https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens)
 
 # {{ cookiecutter.django_project_name }}
-A Django project built using ![n0tNoah/django-cookiecutter-rest](https://github.com/n0tNoah/django-cookiecutter-rest)
+A Django project built using [n0tNoah/django-cookiecutter-rest](https://github.com/n0tNoah/django-cookiecutter-rest)
 
 ## Dev-Setup
 ```bash
