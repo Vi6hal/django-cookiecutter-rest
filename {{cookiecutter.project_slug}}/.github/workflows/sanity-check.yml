@@ -42,4 +42,22 @@ jobs:
       - name: Check Python version # checking the python version to see if 3.x is installed.
         run: python --version
       - name: Install requirements # install application requirements
-        run: pip install -r requirements.txt
+        run: |
+          pip install -r requirements.txt
+          pip install safety
+      - name: Running Dependency Check on installed packages
+        run: |
+          ls -la
+          pip check
+      - name: Running Safety Check on installed packages
+        run: |
+          pip install safety
+          safety check
+      - name: Running project test cases
+        working-directory: app/
+        run: |
+          ls -la
+          python manage.py makemigrations
+          python manage.py migrate
+          python manage.py collectstatic --no-input
+          python manage.py test
