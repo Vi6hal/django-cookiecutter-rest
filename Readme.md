@@ -2,7 +2,7 @@
 
 `django-ccokiecutter-rest` is a cookie-cutter template for bootstrapping `headless` **Django** with minimal efforts and ensuring the best practices followed in at the very beginning.
 
-### build status: [![Sanity Check](https://github.com/n0tNoah/django-cookiecutter-rest/actions/workflows/sanitycheck.yml/badge.svg)](https://github.com/n0tNoah/django-cookiecutter-rest/actions/workflows/sanitycheck.yml)
+[![Sanity Check](https://github.com/n0tNoah/django-cookiecutter-rest/actions/workflows/sanitycheck.yml/badge.svg)](https://github.com/n0tNoah/django-cookiecutter-rest/actions/workflows/sanitycheck.yml)
 
 ## Features
 
