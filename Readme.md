@@ -1,5 +1,5 @@
 
-# Django Cookiecutter template with Django
+# Django Rest Cookiecutter template for Rest Framework/DRF
 
 a django cookiecutter rest framework /drf cookiecutter template for bootstrapping `headless` **Django** with minimal efforts and ensuring the best practices followed in at the very beginning,
 
