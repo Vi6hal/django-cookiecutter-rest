@@ -40,53 +40,52 @@ python3 manage.py runserver
 ```
 
 ## License
-NA.
+**MIT**
 
 
 ## Actions & Workflows
 
-**Action**: New PR Create for (`master`/`main`) branch
-- Outcome:
- **Fail**: Reviewer Should Reject PR and ask dev to fix the issues
- **Pass**: Merge PR
+#### New PR Create for (`master`/`main`) branch:
+     Steps:
+        - Check package dependency/vulnerability issues 
+        - Run Code Analysis (run pre-commit hooks on checkout )
+        - Run Test Cases
+    Outcomes:
+        PASS: Reviewer Should Reject PR and ask dev to fix the issues
+        FAIL: Merge PR
+    
+#### Push/PR Merge in (`master`/`main`) branch:
+     Steps:
+        - Check package dependency/vulnerability issues 
+        - Run Code Analysis (run pre-commit hooks on checkout )
+        - Run Test Cases
+    Outcomes:
+        PASS: Trigger Schematic Versioning Tag release (automatic)
+        FAIL: NA
+#### New Release Create:
+     Steps:
+        - Checkout Release tag and build container image 
+        - Run Code Analysis (run pre-commit hooks on checkout)
+        - Run Test Cases
+        - Perform CodeCov Report
+        - Perform Sonar-Cube Scan
+        - Push Container image to ECR/Docker Hub
+    Outcomes:
+        PASS: Trigger image build and push to container registery (automatic)
+        FAIL: NA
 
->Steps:
->- Check package dependency/vulnerability issues 
->- Run Code Analysis (run pre-commit hooks on checkout )
->- Run Test Cases
-
-**Action**: Push/PR Merge in (`master`/`main`) branch:
-Outcome:
-**Fail**: NA
-**Pass**: Trigger `Schematic Versioning Tag` release (**automatic**)
-
-> #Steps:
-> -Check Package dependency/vulnerability issues
-> -Run Code Analysis (run pre-commit hooks on checkout )
-> -Run Test Cases
-
-**Action**: New Release Create:
-> #Outcome:
-> -**Fail**: NA
-> -**Pass**: Trigger image build and push to `container registery` (**automatic**)
-
-> #Steps:
-> -Checkout Release tag and build container image
-> -Run Test Cases
-> -Perform CodeCov Report
-> -Perform Sonar-Cube Scan
-> -Push Container image to ECR/Docker Hub
-
-**Action**: Manual on Branch:
-> #Outcome:
-> -**Fail**: NA
-> -**Pass**: NA
-
-> #Steps:
-> -Checkout Branch
-> - Check Package dependency/vulnerability issues
-> - Run pre-commit checks
-> - Run Test Cases
+#### Manual Workflow on specific branch:
+     Steps:
+        - Checkout Branch
+        - Check Package dependency/vulnerability issues
+        - Run Code Analysis (run pre-commit hooks on checkout)
+        - Run Test Cases
+        - Perform CodeCov Report
+        - Perform Sonar-Cube Scan
+        - Push Container image to ECR/Docker Hub
+    Outcomes:
+        PASS: NA
+        FAIL: NA
 
 
 
