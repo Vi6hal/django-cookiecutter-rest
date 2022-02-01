@@ -57,9 +57,9 @@ python3 manage.py runserver
 >- Run Test Cases
 
 **Action**: Push/PR Merge in (`master`/`main`) branch:
-> #Outcome:
-> - **Fail**: NA
-> - **Pass**: Trigger `Schematic Versioning Tag` release (**automatic**)
+> Outcome:
+> -**Fail**: NA
+> -**Pass**: Trigger `Schematic Versioning Tag` release (**automatic**)
 
 > #Steps:
 > -Check Package dependency/vulnerability issues
@@ -68,8 +68,8 @@ python3 manage.py runserver
 
 **Action**: New Release Create:
 > #Outcome:
-> - **Fail**: NA
-> - **Pass**: Trigger image build and push to `container registery` (**automatic**)
+> -**Fail**: NA
+> -**Pass**: Trigger image build and push to `container registery` (**automatic**)
 
 > #Steps:
 > -Checkout Release tag and build container image
@@ -80,8 +80,8 @@ python3 manage.py runserver
 
 **Action**: Manual on Branch:
 > #Outcome:
-> - **Fail**: NA
-> - **Pass**: NA
+> -**Fail**: NA
+> -**Pass**: NA
 
 > #Steps:
 > -Checkout Branch
