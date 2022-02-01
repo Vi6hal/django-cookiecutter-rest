@@ -82,7 +82,6 @@ python3 manage.py runserver
         - Run Test Cases
         - Perform CodeCov Report
         - Perform Sonar-Cube Scan
-        - Push Container image to ECR/Docker Hub
     Outcomes:
         PASS: NA
         FAIL: NA
