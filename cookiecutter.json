@@ -3,7 +3,9 @@
   "django_project_name": "cool_django_app",
   "_copy_without_render": [
     "*.html",
+    "*.yml",
+    "*.yaml",
     ".github/workflows/sanity-check.yml",
-    ".github/workflows/release_tag.yml"
+    ".github/**"
   ]
 }
