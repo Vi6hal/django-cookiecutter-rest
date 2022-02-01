@@ -40,16 +40,15 @@ python3 manage.py runserver
 ```
 
 ## License
+NA.
 
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
 ## Actions & Workflows
 
 **Action**: New PR Create for (`master`/`main`) branch:
-> Outcome:
-> **Fail**: Reviewer Should Reject PR and ask dev to fix the issues
-> **Pass**: Merge PR
+Outcome:
+**Fail**: Reviewer Should Reject PR and ask dev to fix the issues
+**Pass**: Merge PR
 
 >Steps:
 >- Check package dependency/vulnerability issues 
@@ -57,9 +56,9 @@ python3 manage.py runserver
 >- Run Test Cases
 
 **Action**: Push/PR Merge in (`master`/`main`) branch:
-> Outcome:
-> -**Fail**: NA
-> -**Pass**: Trigger `Schematic Versioning Tag` release (**automatic**)
+Outcome:
+**Fail**: NA
+**Pass**: Trigger `Schematic Versioning Tag` release (**automatic**)
 
 > #Steps:
 > -Check Package dependency/vulnerability issues
