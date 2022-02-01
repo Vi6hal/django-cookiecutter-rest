@@ -1,0 +1,76 @@
+name: Release Stability Check
+
+# Enable Buildkit and let compose use it to speed up image building
+env:
+  DOCKER_BUILDKIT: 1
+  COMPOSE_DOCKER_CLI_BUILD: 1
+on:
+  release:
+    types: [published]
+
+jobs:
+  coding_standards_andvurnability_checks:
+    name: Analysing Code Quality
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code Repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.8"
+          cache: pip
+          cache-dependency-path: |
+            requirements.txt
+      - name: Installing requirements locally
+        run: pip install -r requirements.txt
+
+      - name: Checking for Broken Requirements
+        run: |
+          pip check
+
+      - name: Running Dependency Vurnability check
+        run: |
+          pip install safety
+          safety check
+
+      - name: Checking Formatting & Linting Compliance
+        uses: pre-commit/action@v2.0.3
+
+  testcases_and_coverage:
+    name: Finding Bugs
+    needs: [coding_standards_andvurnability_checks]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code Repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.8"
+          cache: pip
+          cache-dependency-path: |
+            requirements.txt
+
+      - name: Installing requirements locally
+        run: pip install -r requirements.txt
+      - name: Executing Test cases
+        run: |
+          pip install coverage
+          python app/manage.py makemigrations
+          python app/manage.py migrate
+          python app/manage.py collectstatic --no-input
+          coverage run app/manage.py test
+          coverage report
+
+  build_image_and_push:
+    name: Pusing artifacts to ECR
+    needs: [testcases_and_coverage]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Building Container Image
+        run: |
+          echo "hello world, building container"
+          echo ${GITHUB_REF}

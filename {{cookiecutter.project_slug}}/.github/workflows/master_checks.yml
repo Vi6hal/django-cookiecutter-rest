@@ -1,0 +1,55 @@
+name: Mandatory Code Checks
+
+# Enable Buildkit and let compose use it to speed up image building
+env:
+  DOCKER_BUILDKIT: 1
+  COMPOSE_DOCKER_CLI_BUILD: 1
+on:
+  push:
+    branches: ["master", "main"]
+    paths-ignore: ["docs/**"]
+
+jobs:
+  code_checks:
+    name: Checking Code Quality (Master/Main)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code Repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.8"
+          cache: pip
+          cache-dependency-path: |
+            requirements.txt
+      - name: Installing requirements locally
+        run: pip install -r requirements.txt
+
+      - name: Checking for Broken Requirements
+        run: |
+          pip check
+
+      - name: Running Dependency Vurnability check
+        run: |
+          pip install safety
+          safety check
+
+      - name: Checking Formatting & Linting Compliance
+        uses: pre-commit/action@v2.0.3
+
+  create_release_tag:
+    name: Twiddling Fingers (Master/Main)
+    needs: [code_checks]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: "0"
+      - name: Creating Tag
+        uses: anothrNick/github-tag-action@1.36.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+          DEFAULT_BUMP: patch
+          WITH_V: true
