@@ -48,8 +48,8 @@ python3 manage.py runserver
 
 **Action**: New PR Create for (`master`/`main`) branch:
 >Outcome:
-	- **Fail**: Reviewer Should Reject PR and ask dev to fix the issues
-	- **Pass**: Merge PR
+> -**Fail**: Reviewer Should Reject PR and ask dev to fix the issues
+> -**Pass**: Merge PR
 
 >Steps:
 >- Check package dependency/vulnerability issues 
