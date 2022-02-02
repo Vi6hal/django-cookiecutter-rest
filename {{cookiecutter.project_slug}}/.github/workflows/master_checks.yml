@@ -39,6 +39,15 @@ jobs:
       - name: Checking Formatting & Linting Compliance
         uses: pre-commit/action@v2.0.3
 
+      - name: Finding Bugs
+        run: |
+          pip install coverage
+          python app/manage.py makemigrations
+          python app/manage.py migrate
+          python app/manage.py collectstatic --no-input
+          coverage run app/manage.py test
+          coverage report
+
   create_release_tag:
     name: Twiddling Fingers (Master/Main)
     needs: [code_checks]
