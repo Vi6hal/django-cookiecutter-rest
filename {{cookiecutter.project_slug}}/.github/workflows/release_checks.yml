@@ -64,7 +64,10 @@ jobs:
           python app/manage.py collectstatic --no-input
           coverage run app/manage.py test
           coverage report
-
+      - name: Uploading Coverage Report to S3
+        run: echo "hello world"
+      - name: Executing Sonar scaner
+        run: echo "hello world"
   build_image_and_push:
     name: Pusing artifacts to ECR
     needs: [testcases_and_coverage]
