@@ -47,7 +47,7 @@ Suggestions,opinions & issues are welcome.
 
 ## Authors
 
-* **Vishal P** - *Initiator* - [n0tNoah](https://github.com/n0tNoah)
+* **Vishal P** - *Initiator* - [n0tNoah](https://github.com/Vi6hal)
 
 ##  Acknowledgments
 - 🎩 Hat tip to anyone whose code was used
