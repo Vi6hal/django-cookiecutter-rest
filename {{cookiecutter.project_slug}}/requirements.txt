@@ -2,7 +2,7 @@ Django==3.2.11
 django-cors-headers==3.11.0
 django-filter==21.1
 djangorestframework==3.13.1
-djangorestframework-simplejwt==4.8.0
+djangorestframework-simplejwt==5.2.1
 djoser==2.1.0
 dj-database-url==0.5.0
 drf-yasg==1.20.0
