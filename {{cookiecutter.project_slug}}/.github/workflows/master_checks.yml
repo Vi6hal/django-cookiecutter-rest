@@ -15,10 +15,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code Repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Set up Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4
         with:
           python-version: "3.8"
           cache: pip
@@ -37,7 +37,7 @@ jobs:
           safety check
 
       - name: Checking Formatting & Linting Compliance
-        uses: pre-commit/action@v2.0.3
+        uses: pre-commit/action@v3.0.0
 
       - name: Finding Bugs
         run: |
@@ -53,11 +53,11 @@ jobs:
     needs: [code_checks]
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           fetch-depth: "0"
       - name: Creating Tag
-        uses: anothrNick/github-tag-action@1.36.0
+        uses: anothrNick/github-tag-action@1.52.0
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
           DEFAULT_BUMP: patch
