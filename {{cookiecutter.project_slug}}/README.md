@@ -10,6 +10,7 @@
 
 # {{ cookiecutter.django_project_name }}
 
+A Django project built using rest framework
 ## Dev-Setup
 
 ```bash
@@ -89,6 +90,4 @@ python3 manage.py runserver
         PASS: NA
         FAIL: NA
 
-
-
-A Django project built using [vi6hal/django-cookiecutter-rest](https://github.com/vi6hal/django-cookiecutter-rest)
+###### Built With [vi6hal/django-cookiecutter-rest](https://github.com/vi6hal/django-cookiecutter-rest) & [Django](https://www.djangoproject.com/)

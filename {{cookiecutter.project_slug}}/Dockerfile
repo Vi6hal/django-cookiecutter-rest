@@ -1,4 +1,4 @@
-from python:3.8-bullseye
+from python:3.11-bullseye
 
 # Section 2- Python Interpreter Flags
 ENV PYTHONUNBUFFERED 1
