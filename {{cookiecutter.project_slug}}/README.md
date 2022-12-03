@@ -10,8 +10,6 @@
 
 # {{ cookiecutter.django_project_name }}
 
-A Django project built using [n0tNoah/django-cookiecutter-rest](https://github.com/n0tNoah/django-cookiecutter-rest)
-
 ## Dev-Setup
 
 ```bash
@@ -23,7 +21,7 @@ git init
 ## Installation
 
 ```bash
-git clone https://github.com/n0tNoah/django-cookiecutter-rest
+git clone https://github.com/vi6hal/django-cookiecutter-rest
 pip install -r requirements.txt
 python3 manage.py migrate
 
@@ -90,3 +88,7 @@ python3 manage.py runserver
     Outcomes:
         PASS: NA
         FAIL: NA
+
+
+
+A Django project built using [vi6hal/django-cookiecutter-rest](https://github.com/vi6hal/django-cookiecutter-rest)
