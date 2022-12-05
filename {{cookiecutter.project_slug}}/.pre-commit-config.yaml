@@ -3,7 +3,7 @@ default_stages: [commit]
 
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.1.0
+    rev: v4.4.0
     hooks:
       - id: check-merge-conflict
       - id: check-docstring-first
@@ -20,17 +20,17 @@ repos:
       - id: isort
 
   - repo: https://github.com/psf/black
-    rev: 21.12b0
+    rev: 22.10.0
     hooks:
       - id: black
 
   - repo: https://github.com/pycqa/flake8
-    rev: 4.0.1
+    rev: 6.0.0
     hooks:
       - id: flake8
 
   - repo: https://github.com/asottile/pyupgrade
-    rev: v2.31.0
+    rev: v3.3.0
     hooks:
       - id: pyupgrade
         args: [--py39-plus]
