@@ -11,7 +11,6 @@
 # {{ cookiecutter.django_project_name }}
 
 A Django project built using rest framework
-
 ## Dev-Setup
 
 ```bash
