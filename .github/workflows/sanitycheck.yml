@@ -3,6 +3,8 @@ name: Sanity Check
 
 # triggers for our workflow
 on:
+  schedule:
+  - cron: "* */6 * * *"
   # opening a pull request to master and develop branch will be a trigger
   pull_request:
     branches: ["master", "main"]
