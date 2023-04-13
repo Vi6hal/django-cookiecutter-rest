@@ -24,8 +24,10 @@ jobs:
           cache-dependency-path: |
             requirements.txt
       - name: Installing requirements locally
-        run: pip install -r requirements.txt
-
+        run: |
+          pip install --upgrade pip
+          pip install --upgrade setuptools
+          pip install -r requirements.txt
       - name: Checking for Broken Requirements
         run: |
           pip check

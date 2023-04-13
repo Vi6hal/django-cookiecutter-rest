@@ -8,7 +8,6 @@ from .middleware import get_current_authenticated_user
 
 
 class CurrentUserField(models.ForeignKey):
-
     warning = (
         "You passed an argument to CurrentUserField that will be "
         "ignored. Avoid args and following kwargs: default, null, to."
